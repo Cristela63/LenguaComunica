@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Interactiva - Título y Subtítulo</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Itim&family=Playwrite+VN:wght@100..400&family=Italiana&display=swap');
+
+body {
+    background-color: #ebddc6;
+    font-family: "EB Garamond", serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden; /* Oculta la barra de desplazamiento horizontal */
+    font-size: 16px;
+    display: flex;
+    flex-direction: column; /* Permite que los elementos estén en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: flex-start; /* Asegura que los elementos se alineen en la parte superior */
+    min-height: 100vh; /* Asegura que la altura ocupe toda la ventana */
+}
+.header {
+    background-image: url("banner2.jpg");
+    font-family: "Playwrite VN", cursive;
+    color: #f1f0ee;
+    text-shadow: 1px 1px 3px black;
+    font-size: 180%;
+    font-weight: 400;
+    background-size: cover;
+    background-position: center;
+    padding: 40px 0;
+    text-align: center;
+    width: 100%;
+}
+
+/* Barra de navegación */
+nav {
+    background-color: #8d6f38;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+    height: 50px; /* Establece una altura fija menor */
+}
+
+nav a {
+    font-size: 170%;
+    display: block;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-family: "Italiana", serif;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+/* Contenedor principal */
+.container {
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    margin-top: 20px;
+    text-align: center; /* Centra el contenido del contenedor */
+}
+.contenedor{
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    margin-top: 20px;
+    text-align: center; /* Centra el contenido del contenedor */
+}
+.dotted-line{
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    margin-top: 20px;
+    text-align: center; 
+}
+.activity-section{
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    margin-top: 20px;
+    text-align: center; 
+}
+/* Títulos */
+h2 {
+    text-align: center;
+    color: #6a4e23;
+    font-family: "Italiana", serif;
+    text-shadow: 2px 2px 4px black;
+}
+
+/* Tabla */
+.table-container {
+    margin: 20px 0;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #c69c6d; /* Borde color café suave */
+    font-family: "EB Garamond", serif;
+}
+
+th {
+    background-color: #6a4e23;
+    color: white;
+}
+
+td {
+    background-color: #e4d1b9;
+}
+
+/* Línea punteada debajo de la tabla */
+.dotted-line {
+    border-bottom: 2px dotted #6a4e23;
+    margin: 20px 0;
+}
+
+/* Sección de explicación */
+.activity-section {
+    margin-top: 30px;
+    font-family: "Itim", cursive;
+    font-size: 18px;
+    color: #6a4e23;
+    line-height: 1.8;
+}
+
+/* Estilo de las actividades */
+.input-container {
+    margin-bottom: 15px;
+}
+
+input[type="text"] {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #c69c6d;
+    border-radius: 5px;
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Botón para verificar respuestas */
+button {
+    background-color: #72412c;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: "Italiana", serif;
+}
+
+button:hover {
+    background-color: #6a4e23;
+}
+
+/* Contenedor de microfono */
+.microphone-container {
+    margin-top: 20px;
+}
+
+/* Pie de página */
+footer {
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-family: "Italiana", serif;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+/* Contenedor del pie de página */
+.footer-container {
+    font-family: "EB Garamond", serif;
+    max-width: 1400px; /* Aumentamos el ancho máximo para que sea más amplio */
+    max-height: 200px; /* Reducimos la altura máxima */
+    margin: 0 auto;
+    background-color: #8d6f38;
+    border-radius: 8px;
+    padding: 10px; /* Ajustamos el relleno interno */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Contenido del pie de página */
+.footer-content {
+    margin-bottom: 5px;
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: rgb(255, 252, 252);
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    border-top: 1px solid #96753e;
+    padding-top: 10px;
+}
+
+/* Alineación específica de logos o marcas */
+.dgti, .cbtis {
+    position: relative;
+    top: 240px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dgti {
+    position: relative;
+    top: 210px; /* Ajustamos la posición */
+    left: -500px;
+}
+
+.cbtis {
+    position: relative;
+    top: 108px; /* Ajustamos la posición */
+    left: 500px;
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1 class="display-4">Aprende y Comunica</h1>
+    </header>
+    <nav class="navigation">
+        <a href="Menu.html">Menú</a>
+        <a href="Introduccion.html">Intoducción</a>
+        <a href="Ensayo.html">Ensayo</a>
+        <a href="Punto de vista.html">Escritor</a>
+        <a href="Tesis.html">Tesis</a>
+        <a href="examen.html">Evaluación</a>
+    </nav>
+    <div class="container">
+        <h2>Focalización, Perspectiva o Punto de Vista</h2>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Focalización</th>
+                    <th>Corresponde a:</th>
+                    <th>Características</th>
+                </tr>
+                <tr>
+                    <td>Focalización cero</td>
+                    <td>Narrador omnisciente</td>
+                    <td>Relato no focalizado o denominado también visión por detrás</td>
+                </tr>
+                <tr>
+                    <td>Focalización interna</td>
+                    <td>Narrador protagonista y testigo</td>
+                    <td>Visión desde dentro</td>
+                </tr>
+                <tr>
+                    <td>Focalización externa</td>
+                    <td>Narrador de conocimiento relativo</td>
+                    <td>Visión desde fuera</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="contenedor">
+        <table border="1" cellpadding="10" cellspacing="0">
+            <h2>Cualidades y características del escritor</h2>
+            <thead>
+                <tr>
+                    <th>Cualidades</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Conocimiento del tema</td>
+                    <td>Debe tener un buen entendimiento del tema.</td>
+                </tr>
+                <tr>
+                    <td>Habilidad analítica</td>
+                    <td>Debe ser capaz de analizar críticamente la información, identificar patrones, conexiones y contradicciones.</td>
+                </tr>
+                <tr>
+                    <td>Pensamiento crítico</td>
+                    <td>Debe cuestionar y evaluar distintas perspectivas.</td>
+                </tr>
+                <tr>
+                    <td>Claridad de pensamiento y expresión</td>
+                    <td>Debe de expresar sus ideas de forma clara, precisa y persuasiva.</td>
+                </tr>
+                <tr>
+                    <td>Creatividad</td>
+                    <td>Permite tener un cierto grado de creatividad en la forma en que se presentan los argumentos y se abordan los temas.</td>
+                </tr>
+                <tr>
+                    <td>Curiosidad intelectual</td>
+                    <td>Debe tener una mente abierta y estar dispuesta a explorar nuevas ideasy perspectivas.</td>
+                </tr>
+                <tr>
+                    <td>Capacidad de síntesis</td>
+                    <td>Debe sintetizar la información recopilada de diversas fuentes en un argumento coherente y convincente.</td>
+                </tr>
+                <tr>
+                    <td>Ética académica</td>
+                    <td>Debe adherirse a los principios de integridad académica y evitar el plagio en todas sus formas.</td>
+                </tr>
+                <tr>
+                    <td>Habilidad de revisión y edición</td>
+                    <td>Debe ser capaz de revisar y editar su trabajo de manera crítica para corregir errores gramaticales, mejorar la claridad y coherencia del texto, y garantizar la consistencia de estilo y la presentación.</td>
+                </tr>
+                <tr>
+                    <td>Resilencia y perseverancia</td>
+                    <td>Debe ser capaz de perseverar a través de estos desafíos y mantenerse comprometido con el proceso de escritura hasta que se logre un resultado satisfactorio.</td>
+                </tr>
+                <!-- Puedes agregar más filas aquí -->
+            </tbody>
+        </table>
+    </div>
+       
+
+        <div class="activity-section">
+            <h2>¿Qué son el Título y el Subtítulo en un Ensayo?</h2>
+            <p id="explicacion-texto">
+                El título es la primera impresión que el lector recibe de un ensayo. Debe captar la atención, reflejar el tema principal y ser claro. Un buen título resume de manera efectiva el contenido del ensayo.
+                <br><br>
+                El subtítulo complementa el título, añadiendo información adicional sobre el enfoque del ensayo. Aunque no es obligatorio, su uso ayuda a especificar el objetivo o el área de discusión del trabajo.
+            </p>
+        </div>
+
+        <div class="activity-section">
+            <h2>Actividad: Escribe el número correspondiente</h2>
+            <p>Escribe el número "1" si es un título y "2" si es un subtítulo.</p>
+
+            <div class="input-container">
+                <label for="respuesta-1">1. El Impacto de la Inteligencia Artificial:</label>
+                <input type="text" id="respuesta-1" placeholder="Escribe 1 o 2">
+            </div>
+
+            <div class="input-container">
+                <label for="respuesta-2">2. Nuevas Perspectivas en la Educación:</label>
+                <input type="text" id="respuesta-2" placeholder="Escribe 1 o 2">
+            </div>
+
+            <div class="input-container">
+                <label for="respuesta-3">3. Tecnología y Sociedad: Un Análisis:</label>
+                <input type="text" id="respuesta-3" placeholder="Escribe 1 o 2">
+            </div>
+
+            <div class="input-container">
+                <label for="respuesta-4">4. Avances en la Ciencia del Siglo XXI:</label>
+                <input type="text" id="respuesta-4" placeholder="Escribe 1 o 2">
+            </div>
+
+            <div class="input-container">
+                <button onclick="verificarRespuestas()">Verificar respuestas</button>
+            </div>
+
+            <div id="feedback" class="feedback"></div>
+        </div>
+        <footer>
+            <div class="dgti">
+                <img src="dgti.png" width="100" height="100" class="imagen-frontal">
+            </div>
+            <div class="cbtis">
+                <img src="cbtis.png" width="100" height="100" class="imagen-frontal">
+            </div>
+        
+            <div class="footer-container">
+                <div class="footer-content">
+                    <p>Redes sociales y contactos: 
+                        <br>
+                            subdireccion.academica@cbtis258.edu.mx
+                    </p>
+                <div class="social-links">
+                    Instagram
+                    <br>
+                    <a href="https://www.instagram.com/lengua_y_comunica?igsh=MXhjZmF5M2ozaGRpMA==" target="_blank">@lengua_y_comunica</a>
+                </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 CBTis258</p>
+                </div>
+            </div>
+        </footer>
+        <script> 
+            // Función para verificar las respuestas
+ function verificarRespuestas() {
+    const respuestasCorrectas = {
+        'respuesta-1': '1', // Título
+        'respuesta-2': '2', // Subtítulo
+        'respuesta-3': '2', // Subtítulo
+        'respuesta-4': '1' // Título
+    };
+
+    let feedback = document.getElementById("feedback");
+    let allCorrect = true;
+
+    for (let id in respuestasCorrectas) {
+        const respuestaUsuario = document.getElementById(id).value.trim();
+        if (respuestaUsuario !== respuestasCorrectas[id]) {
+            allCorrect = false;
+            document.getElementById(id).style.borderColor = "red";
+        } else {
+            document.getElementById(id).style.borderColor = "green";
+        }
+    }
+
+    if (allCorrect) {
+        feedback.textContent = "¡Todas las respuestas son correctas!";
+        feedback.className = "feedback correct";
+    } else {
+        feedback.textContent = "Algunas respuestas son incorrectas. Inténtalo de nuevo.";
+        feedback.className = "feedback incorrect";
+    }
+}
+        </script>
+</body>
+</html>
