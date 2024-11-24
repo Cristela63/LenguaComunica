@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordena el Texto Correctamente</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Itim&family=Playwrite+VN:wght@100..400&family=Italiana&display=swap');
+body {
+    background-color: #ebddc6;
+    font-family: "EB Garamond", serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden; /* Oculta la barra de desplazamiento horizontal */
+    font-size: 16px;
+    display: flex;
+    flex-direction: column; /* Permite que los elementos estén en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: flex-start; /* Asegura que los elementos se alineen en la parte superior */
+    min-height: 100vh; /* Asegura que la altura ocupe toda la ventana */
+}
+
+/* Encabezado */
+.header {
+    background-image: url("banner2.jpg");
+    font-family: "Playwrite VN", cursive;
+    color: #f1f0ee;
+    text-shadow: 1px 1px 3px black;
+    font-size: 180%;
+    font-weight: 400;
+    background-size: cover;
+    background-position: center;
+    padding: 40px 0;
+    text-align: center;
+    width: 100%;
+}
+
+/* Barra de navegación */
+nav {
+    background-color: #8d6f38;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+    height: 50px; /* Establece una altura fija menor */
+}
+
+nav a {
+    font-size: 170%;
+    display: block;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-family: "Italiana", serif;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Contenedor principal */
+.container {
+    background-color: #fff3e6; /* Fondo blanco con tono cálido */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    margin-top: 20px;
+    text-align: center; /* Centra el contenido del contenedor */
+}
+
+/* Títulos */
+ h3 {
+    text-align: center;
+    color: #6a4e23; /* Tono café oscuro */
+    font-family: "Playwrite VN", cursive;
+    text-shadow: 2px 2px 4px black; /* Añadir sombra */
+}
+
+h3 {
+    font-size: 160%;
+    color: white;
+    font-family: "Itim", cursive;
+    margin-bottom: 20px;
+}
+
+/* Secciones */
+.section {
+    padding: 15px;
+    margin: 10px 0;
+    border: 2px solid #c69c6d; /* Borde color café suave */
+    border-radius: 5px;
+    background-color: #e4d1b9; /* Fondo de las secciones color beige cálido */
+    transition: background-color 0.3s ease;
+    font-family: "EB Garamond", serif;
+    cursor: grab; /* Cambia el cursor al pasar sobre la sección */
+    text-align: center; /* Centra el contenido de la sección */
+}
+
+.section:hover {
+    background-color: #d3b29f; /* Cambio al pasar el mouse */
+}
+
+.back-btn {
+    font-family: "Italiana", serif;
+    text-decoration: none;
+    background-color: #72412c;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+/* Contenedor de botones */
+.order-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    padding: 0 10px;
+}
+
+.order-container button {
+    background-color: #72412c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1.2em;
+    font-family: "Italiana", serif;
+}
+
+.order-container button:hover {
+    background-color: #6a4e23; /* Cambio de color en hover */
+}
+
+/* Puntaje */
+.score {
+    margin-top: 20px;
+    text-align: center;
+    color: #6a4e23; /* Color marrón para el texto del puntaje */
+    font-family: "Itim", cursive;
+}
+
+/* Estilos para respuestas correctas e incorrectas */
+.correct {
+    background-color: #d4edda; /* Fondo verde suave para correcto */
+}
+
+.incorrect {
+    background-color: #f8d7da; /* Fondo rojo suave para incorrecto */
+}
+
+/* Estilo para los selectores */
+select {
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #c69c6d;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+/* Pie de página */
+footer {
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-family: "Italiana", serif;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+/* Contenedor del pie de página */
+
+.footer-container {
+    font-family: "EB Garamond", serif;
+    max-width: 1400px; /* Aumentamos el ancho máximo para que sea más amplio */
+    max-height: 200px; /* Reducimos la altura máxima */
+    margin: 0 auto;
+    background-color: #8d6f38;
+    border-radius: 8px;
+    padding: 10px; /* Ajustamos el relleno interno */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+/* Contenido del pie de página */
+.footer-content {
+    margin-bottom: 5px;
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: rgb(255, 252, 252);
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    border-top: 1px solid #96753e;
+    padding-top: 10px;
+}
+
+/* Alineación específica de logos o marcas */
+.dgti, .cbtis {
+    position: relative;
+    top: 240px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dgti {
+    position: relative;
+    top: 210px; /* Ajustamos la posición */
+    left: -500px;
+}
+.cbtis {
+    position: relative;
+    top: 108px; /* Ajustamos la posición */
+    left: 500px;
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1 class="display-4">Aprende y Comunica</h1>
+    </header>
+    <nav class="navigation">
+        <a href="Menu.html">Menú</a>
+        <a href="Introduccion.html">Intoducción</a>
+        <a href="Ensayo.html">Ensayo</a>
+        <a href="Punto de vista.html">Escritor</a>
+        <a href="Tesis.html">Tesis</a>
+        <a href="examen.html">Evaluación</a>
+    </nav>
+    <div class="container">
+        <h3>Selecciona la categoría correcta para cada parte del ensayo</h3>
+        <div class="sections-container" id="sections-container">
+            <!-- Las secciones estarán aquí -->
+        </div>
+        <div class="order-container">
+            <button onclick="checkOrder()">Verificar Respuesta</button>
+            <button onclick="resetGame()">Reiniciar</button>
+        </div>
+        <div class="score" id="score"></div>
+    </div>
+    <br>
+    <button class="back-btn" onclick="window.location.href = 'Ensayo.html'">Regresar al tema</button>
+
+    <footer>
+        <div class="dgti">
+            <img src="dgti.png" width="100" height="100" class="imagen-frontal">
+        </div>
+        <div class="cbtis">
+            <img src="cbtis.png" width="100" height="100" class="imagen-frontal">
+        </div>
+    
+        <div class="footer-container">
+            <div class="footer-content">
+                <p>Redes sociales y contactos: 
+                    <br>
+                        subdireccion.academica@cbtis258.edu.mx
+                </p>
+            <div class="social-links">
+                Instagram
+                <br>
+                <a href="https://www.instagram.com/lengua_y_comunica?igsh=MXhjZmF5M2ozaGRpMA==" target="_blank">@lengua_y_comunica</a>
+            </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CBTis258</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+                // Secciones del ensayo desordenadas
+                const sections = [
+            { id: 'A', text: 'El cambio climático es uno de los mayores retos globales del siglo XXI. Afecta a todos los países, pero sus consecuencias son especialmente graves en las naciones más vulnerables.' },
+            { id: 'B', text: 'El cambio climático está relacionado con el aumento de las temperaturas, el derretimiento de los polos y la alteración de los patrones climáticos en diversas regiones.' },
+            { id: 'C', text: 'El futuro del planeta depende de las decisiones que tomemos ahora. Si no actuamos con urgencia, el cambio climático podría provocar desastres irreversibles.' },
+            { id: 'D', text: 'Se deben implementar políticas globales para mitigar los efectos del cambio climático. Esto incluye el uso de energías renovables y la reducción de emisiones de gases de efecto invernadero.' },
+            { id: 'E', text: 'Es importante que los ciudadanos tomen conciencia de la situación y adopten prácticas sostenibles en su vida diaria, como el reciclaje y el uso responsable de los recursos.' },
+            { id: 'F', text: 'El cambio climático afecta no solo a los ecosistemas, sino también a la salud humana, la agricultura y la economía de muchas naciones.' },
+            { id: 'G', text: 'El impacto del cambio climático ya es visible: sequías extremas, fenómenos meteorológicos más intensos y el aumento del nivel del mar son solo algunas de sus consecuencias.' },
+            { id: 'H', text: 'Para enfrentar el cambio climático, necesitamos actuar ahora y tomar medidas concretas, como la inversión en tecnologías verdes y la implementación de leyes más estrictas sobre la emisión de contaminantes.' }
+        ];
+
+        // Orden correcto de las secciones
+        const correctOrder = ['Título', 'Subtítulo', 'Introducción', 'Tesis', 'Desarrollo', 'Desarrollo', 'Desarrollo', 'Conclusión'];  // Categorías correctas
+        let userSelections = [];
+
+        // Función para crear las secciones con los selectores de categoría
+        function loadSections() {
+            const container = document.getElementById('sections-container');
+            container.innerHTML = ''; // Limpiar las secciones anteriores
+
+            sections.forEach((section) => {
+                const div = document.createElement('div');
+                div.classList.add('section');
+                div.id = `section-${section.id}`;
+                div.textContent = section.text;
+
+                // Crear un selector de categorías
+                const select = document.createElement('select');
+                select.setAttribute('data-id', section.id);
+                const categories = ['Título', 'Subtítulo', 'Introducción', 'Tesis', 'Desarrollo', 'Conclusión'];
+                categories.forEach((category) => {
+                    const option = document.createElement('option');
+                    option.value = category;
+                    option.textContent = category;
+                    select.appendChild(option);
+                });
+
+                select.addEventListener('change', updateUserSelections);
+                div.appendChild(select);
+                container.appendChild(div);
+            });
+        }
+
+        // Función para actualizar las selecciones del usuario
+        function updateUserSelections() {
+            userSelections = [];
+            const selects = document.querySelectorAll('select');
+            selects.forEach(select => {
+                userSelections.push({ id: select.getAttribute('data-id'), selection: select.value });
+            });
+        }
+
+        // Función para verificar el orden
+        function checkOrder() {
+            let score = 0;
+            userSelections.forEach(({ id, selection }) => {
+                const section = document.getElementById(`section-${id}`);
+                const correctCategory = correctOrder[sections.findIndex(s => s.id === id)];
+
+                if (selection === correctCategory) {
+                    section.classList.add('correct');
+                    score += 10;
+                } else {
+                    section.classList.add('incorrect');
+                }
+            });
+            document.getElementById('score').textContent = `Puntaje: ${score} puntos`;
+        }
+
+        // Función para reiniciar el juego
+        function resetGame() {
+            loadSections();
+            document.getElementById('score').textContent = '';  // Limpiar el puntaje
+        }
+
+        // Cargar las secciones al cargar la página
+        window.onload = loadSections;
+    </script>
+</body>
+</html>
