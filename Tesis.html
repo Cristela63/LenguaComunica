@@ -351,7 +351,7 @@ footer {
         </div>
     </footer>
     <script>
-        let preguntaActual = 0;
+       let preguntaActual = 0;
 const preguntas = [
     {
         pregunta: '¿Cuál es la primera parte de una tesis?',
@@ -414,6 +414,12 @@ function responder(respuesta) {
 function reiniciarJuego() {
     preguntaActual = 0;
     document.querySelector('#resultado').style.display = 'none';
+    mostrarPregunta();
+}
+
+// Iniciar el juego al cargar la página
+mostrarPregunta();
+
     </script>
 </body>
 </html>
