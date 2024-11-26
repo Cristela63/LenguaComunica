@@ -341,47 +341,33 @@ function mostrarPregunta() {
         const botones = document.querySelectorAll('.answers button');
         for (let i = 0; i < botones.length; i++) {
             botones[i].textContent = pregunta.opciones[i];
-            botones[i].disabled = false;
-            botones[i].classList.remove('correct', 'incorrect');
-            botones[i].style.backgroundColor = ''; // Restablece el color de fondo
         }
-        document.querySelector('#feedback').innerHTML = '';
+        document.querySelector('#feedback').innerHTML = ''; // Limpiar feedback anterior
     } else {
         document.querySelector('#resultado').style.display = 'block';
     }
 }
 
-function responder(boton) {
+// Función que se llama cuando el usuario hace clic en una respuesta
+function responder(respuesta) {
     const pregunta = preguntas[preguntaActual];
-    const botones = document.querySelectorAll('.answers button');
-    const respuesta = boton.textContent;
-
-    if (respuesta === pregunta.correcta) {
-        boton.classList.add('correct');
-        boton.style.backgroundColor = 'green'; // Cambia a verde para respuesta correcta
-    } else {
-        boton.classList.add('incorrect');
-        boton.style.backgroundColor = 'red'; // Cambia a rojo para respuesta incorrecta
-    }
-
-    botones.forEach(boton => boton.disabled = true); // Deshabilitar todos los botones
-
     const feedback = document.querySelector('#feedback');
     if (respuesta === pregunta.correcta) {
         feedback.textContent = '¡Respuesta correcta!';
+        feedback.className = 'feedback correct';
     } else {
         feedback.textContent = 'Respuesta incorrecta, intenta nuevamente.';
+        feedback.className = 'feedback incorrect';
     }
-
     preguntaActual++;
-    setTimeout(mostrarPregunta, 1500); // Avanza a la siguiente pregunta después de 1.5 segundos
+    setTimeout(mostrarPregunta, 1500); // Esperar antes de mostrar la siguiente pregunta
 }
 
 // Función para reiniciar el juego
 function reiniciarJuego() {
     preguntaActual = 0;
     document.querySelector('#resultado').style.display = 'none';
-    mostrarPregunta(); // Vuelve a mostrar la primera pregunta
+    mostrarPregunta();
 }
 
 // Iniciar el juego al cargar la página
