@@ -341,8 +341,11 @@ function mostrarPregunta() {
         const botones = document.querySelectorAll('.answers button');
         for (let i = 0; i < botones.length; i++) {
             botones[i].textContent = pregunta.opciones[i];
+            botones[i].disabled = false;
+            botones[i].classList.remove('correct', 'incorrect');
+            botones[i].style.backgroundColor = ''; // Restablece el color de fondo
         }
-        document.querySelector('#feedback').innerHTML = ''; // Limpiar feedback anterior
+        document.querySelector('#feedback').innerHTML = '';
     } else {
         document.querySelector('#resultado').style.display = 'block';
     }
