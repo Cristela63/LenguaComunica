@@ -271,10 +271,10 @@ footer {
         <h1 class="display-4">Aprende y Comunica</h1>
     </header>
     <nav class="navigation">
-        <a href="index.html">Menú</a>
+        <a href="Menu.html">Menú</a>
         <a href="Introduccion.html">Intoducción</a>
         <a href="Ensayo.html">Ensayo</a>
-        <a href="Puntodevista.html">Escritor</a>
+        <a href="Punto de vista.html">Escritor</a>
         <a href="Tesis.html">Tesis</a>
         <a href="examen.html">Evaluación</a>
     </nav>
@@ -400,9 +400,6 @@ footer {
 
             <div id="feedback" class="feedback"></div>
         </div>
-    <div class="back-btn">
-       <button class="back-btn" onclick="window.location.href='index.html';">Regresar al Menú </button>
-    </div>
         <footer>
             <div class="dgti">
                 <img src="dgti.png" width="100" height="100" class="imagen-frontal">
@@ -428,38 +425,6 @@ footer {
                 </div>
             </div>
         </footer>
-        <script> 
-            // Función para verificar las respuestas
- function verificarRespuestas() {
-    const respuestasCorrectas = {
-        'respuesta-1': '1', // Título
-        'respuesta-2': '2', // Subtítulo
-        'respuesta-3': '2', // Subtítulo
-        'respuesta-4': '1' // Título
-    };
-
-    let feedback = document.getElementById("feedback");
-    let allCorrect = true;
-
-    for (let id in respuestasCorrectas) {
-        const respuestaUsuario = document.getElementById(id).value.trim();
-        if (respuestaUsuario !== respuestasCorrectas[id]) {
-            allCorrect = false;
-            document.getElementById(id).style.borderColor = "red";
-        } else {
-            document.getElementById(id).style.borderColor = "green";
-        }
-    }
-
-    if (allCorrect) {
-        feedback.textContent = "¡Todas las respuestas son correctas!";
-        feedback.className = "feedback correct";
-    } else {
-        feedback.textContent = "Algunas respuestas son incorrectas. Inténtalo de nuevo.";
-        feedback.className = "feedback incorrect";
-    }
-}
-        </script>
-    
+        <script> </script>
 </body>
 </html>
