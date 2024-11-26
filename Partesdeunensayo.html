@@ -88,21 +88,50 @@ h2 {
     margin-bottom: 20px; /* Espacio debajo */
 }
 
-/* Secciones */
+/* Secciones - Mejorando la apariencia de las cajas de texto con mini párrafos */
 .section {
-    background-color: #d3b29f; 
-    padding: 15px;
-    margin: 10px 0;
-    border: 2px solid #c69c6d; /* Borde color café suave */
-    border-radius: 5px;
-    background-color: #e4d1b9; /* Fondo de las secciones color beige cálido */
+    background-color: #e4d1b9; /* Fondo beige cálido para el área */
+    padding: 20px; /* Aumentar el padding para más espacio alrededor del texto */
+    margin: 15px 0; /* Mayor espacio entre las secciones */
+    border: 2px solid #c69c6d; /* Borde suave color café */
+    border-radius: 8px; /* Bordes más redondeados */
     font-family: "EB Garamond", serif;
     cursor: grab; /* Cambia el cursor al pasar sobre la sección */
-    text-align: center; /* Centra el contenido de la sección */
+    text-align: justify; /* Justificar el texto para mejor distribución */
+    line-height: 1.8; /* Espacio entre líneas para mayor legibilidad */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añadir sombra suave */
 }
 
+/* Sección con hover para un cambio de color al pasar el mouse */
 .section:hover {
-    background-color: #d3b29f; /* Cambio al pasar el mouse */
+    background-color: #d3b29f; /* Cambio de color de fondo en hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra más prominente al hacer hover */
+}
+
+/* Estilo para los párrafos dentro de las secciones */
+.section p {
+    font-size: 1.1em; /* Aumenta el tamaño de la fuente de los párrafos */
+    color: #4a3c29; /* Color de texto oscuro para facilitar la lectura */
+    margin-bottom: 15px; /* Espacio entre párrafos */
+    text-align: justify; /* Asegura que el texto esté justificado */
+}
+
+/* Añadir un margen a la sección de títulos si existe dentro de la caja */
+.section h3 {
+    font-size: 1.5em; /* Tamaño de fuente para subtítulos */
+    color: #72412c; /* Un tono marrón oscuro */
+    margin-bottom: 10px;
+    font-family: "Italiana", serif;
+}
+
+/* Estilo para los enlaces dentro de las secciones */
+.section a {
+    color: #72412c; /* Color marrón para enlaces */
+    text-decoration: none; /* Sin subrayado en los enlaces */
+}
+
+.section a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón sobre el enlace */
 }
 
 /* Botón de retroceso */
