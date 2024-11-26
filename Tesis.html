@@ -351,19 +351,30 @@ function mostrarPregunta() {
     }
 }
 
-// Función que se llama cuando el usuario hace clic en una respuesta
-function responder(respuesta) {
+function responder(boton) {
     const pregunta = preguntas[preguntaActual];
+    const botones = document.querySelectorAll('.answers button');
+    const respuesta = boton.textContent;
+
+    if (respuesta === pregunta.correcta) {
+        boton.classList.add('correct');
+        boton.style.backgroundColor = 'green'; // Cambia a verde para respuesta correcta
+    } else {
+        boton.classList.add('incorrect');
+        boton.style.backgroundColor = 'red'; // Cambia a rojo para respuesta incorrecta
+    }
+
+    botones.forEach(boton => boton.disabled = true); // Deshabilitar todos los botones
+
     const feedback = document.querySelector('#feedback');
     if (respuesta === pregunta.correcta) {
         feedback.textContent = '¡Respuesta correcta!';
-        feedback.className = 'feedback correct';
     } else {
         feedback.textContent = 'Respuesta incorrecta, intenta nuevamente.';
-        feedback.className = 'feedback incorrect';
     }
+
     preguntaActual++;
-    setTimeout(mostrarPregunta, 1500); // Esperar antes de mostrar la siguiente pregunta
+    setTimeout(mostrarPregunta, 1500); // Avanza a la siguiente pregunta después de 1.5 segundos
 }
 
 // Función para reiniciar el juego
