@@ -303,7 +303,7 @@ footer {
                 <div class="questions">
                     <p id="texto-pregunta"></p>
                 </div>
-<script>
+                <script>
 let preguntaActual = 0;
 const preguntas = [
     {
@@ -342,6 +342,7 @@ function mostrarPregunta() {
         for (let i = 0; i < botones.length; i++) {
             botones[i].textContent = pregunta.opciones[i];
             botones[i].disabled = false;
+            botones[i].classList.remove('correct', 'incorrect');
             botones[i].style.backgroundColor = ''; // Restablece el color de fondo
         }
         document.querySelector('#feedback').innerHTML = '';
@@ -355,17 +356,16 @@ function responder(boton) {
     const botones = document.querySelectorAll('.answers button');
     const respuesta = boton.textContent;
 
-    // Cambiar el color de fondo del botón dependiendo si la respuesta es correcta o incorrecta
     if (respuesta === pregunta.correcta) {
-        boton.style.backgroundColor = 'green'; // Verde para respuesta correcta
+        boton.classList.add('correct');
+        boton.style.backgroundColor = 'green'; // Cambia a verde para respuesta correcta
     } else {
-        boton.style.backgroundColor = 'red'; // Rojo para respuesta incorrecta
+        boton.classList.add('incorrect');
+        boton.style.backgroundColor = 'red'; // Cambia a rojo para respuesta incorrecta
     }
 
-    // Deshabilitar todos los botones después de seleccionar una respuesta
-    botones.forEach(b => b.disabled = true);
+    botones.forEach(boton => boton.disabled = true); // Deshabilitar todos los botones
 
-    // Feedback de la respuesta
     const feedback = document.querySelector('#feedback');
     if (respuesta === pregunta.correcta) {
         feedback.textContent = '¡Respuesta correcta!';
@@ -373,9 +373,8 @@ function responder(boton) {
         feedback.textContent = 'Respuesta incorrecta, intenta nuevamente.';
     }
 
-    // Avanzar a la siguiente pregunta después de un tiempo
     preguntaActual++;
-    setTimeout(mostrarPregunta, 1500); // 1.5 segundos para pasar a la siguiente pregunta
+    setTimeout(mostrarPregunta, 1500); // Avanza a la siguiente pregunta después de 1.5 segundos
 }
 
 // Función para reiniciar el juego
@@ -388,7 +387,6 @@ function reiniciarJuego() {
 // Iniciar el juego al cargar la página
 mostrarPregunta();
 </script>
-
                 <!-- Columna de respuestas -->
                 <div class="answers">
                     <button onclick="responder('Introducción')">Introducción</button>
