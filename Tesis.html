@@ -356,15 +356,15 @@ function responder(boton) {
     const botones = document.querySelectorAll('.answers button');
     const respuesta = boton.textContent;
 
+    // Cambia el fondo de los botones dependiendo de si la respuesta es correcta o incorrecta
     if (respuesta === pregunta.correcta) {
-        boton.classList.add('correct');
-        boton.style.backgroundColor = 'green'; // Cambia a verde para respuesta correcta
+        boton.style.backgroundColor = 'green'; // Verde para respuesta correcta
     } else {
-        boton.classList.add('incorrect');
-        boton.style.backgroundColor = 'red'; // Cambia a rojo para respuesta incorrecta
+        boton.style.backgroundColor = 'red'; // Rojo para respuesta incorrecta
     }
 
-    botones.forEach(boton => boton.disabled = true); // Deshabilitar todos los botones
+    // Deshabilitar todos los botones después de seleccionar una respuesta
+    botones.forEach(boton => boton.disabled = true);
 
     const feedback = document.querySelector('#feedback');
     if (respuesta === pregunta.correcta) {
