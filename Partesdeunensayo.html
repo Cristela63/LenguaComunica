@@ -83,7 +83,7 @@ h2 {
     text-align: center;
     font-size: 160%; /* Tamaño de fuente */
     color: white;
-    font-family: "Itim", cursive;
+  font-family: "Playwrite VN", cursive;
     text-shadow: 2px 2px 4px black; /* Añadir sombra */
     margin-bottom: 20px; /* Espacio debajo */
 }
@@ -385,7 +385,7 @@ footer {
             for (let i = 0; i < correctOrder.length; i++) {
                 const expectedText = sections.find(section => section.id === correctOrder[i]).text.trim();
                 if (userOrder[i] === expectedText) {
-                    score += 20; // Cada sección correcta suma 20 puntos
+                    score += 10; // Cada sección correcta suma 20 puntos
                     document.querySelectorAll('.section')[i].classList.add('correct'); // Resaltar como correcta
                 } else {
                     document.querySelectorAll('.section')[i].classList.add('incorrect'); // Resaltar como incorrecta
